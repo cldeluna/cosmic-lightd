@@ -25,16 +25,17 @@ RUN apt-get install -yq software-properties-common && \
     apt-get update -q && \
     apt-get install -yq ansible=2.7*
 
-RUN apt-get install -y tree && \
-    apt-get install -y nano && \
-    apt-get install -y git && \
-    apt-get install -y wget && \
-    apt-get install -y vim && \
-    apt-get install -y traceroute && \
-    apt-get install -y iputils-ping && \
-    apt-get install -y snmp && \
-    apt-get install -y snmp-mibs-downloader && \
-    apt-get install -y pandoc && \
+RUN apt-get install -y tree
+RUN apt-get install -y nano
+RUN apt-get install -y git
+RUN apt-get install -y wget
+RUN apt-get install -y vim
+RUN apt-get install -y traceroute
+RUN apt-get install -y iputils-ping
+RUN apt-get install -y snmp
+RUN apt-get install -y snmp-mibs-downloader
+RUN apt-get install -y pandoc
+RUN apt-get install -y texlive
 
 RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
@@ -48,11 +49,18 @@ RUN pip3 install argparse && \
         pip3 install ciscoconfparse && \
         pip3 install netmiko && \
         pip3 install pandas && \
+        pip3 install PyYAML && \
+        pip3 install pyang && \
+        pip3 install pysnmp && \
+        pip3 install ncclient && \
         pip3 install xlrd
+
+# cleanup
 
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get -qy autoremove
 
 VOLUME /ansible
 
