@@ -80,8 +80,9 @@ Claudias-iMac:cosmic-light claudia$ docker run -v  /Users/claudia/Documents/dock
 ## Docker Hub
 
 ```
-Claudias-iMac:cosmic-light claudia$ docker tag cldeluna/cosmic-light:latest cldeluna/cosmic-heartbreak:latest
-Claudias-iMac:cosmic-light claudia$ docker push cldeluna/cosmic-light
+Claudias-iMac:cosmic-lightd claudia$ docker login
+Claudias-iMac:cosmic-lightd claudia$ docker tag cldeluna/cosmic-lightd:latest cldeluna/cosmic-lightd:latest
+Claudias-iMac:cosmic-lightd claudia$ docker push cldeluna/cosmic-lightd
 ```
 
 ## Environment

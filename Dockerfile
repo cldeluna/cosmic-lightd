@@ -9,10 +9,13 @@ FROM ubuntu:18.10
 MAINTAINER Claudia de Luna <claudia@indigowire.net>
 
 
-RUN apt-get -y update && \
-    apt-get -y update && \
-    apt-get -y upgrade && \
-    apt-get install -y python-yaml python-jinja2 python-httplib2 python-keyczar python-paramiko python-setuptools python-pkg-resources git python-pip
+RUN apt-get -y update
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get install -y apt-utils
+
+RUN apt-get install -y python-yaml python-jinja2 python-httplib2 python-keyczar python-paramiko python-setuptools python-pkg-resources git python-pip
+
 
 RUN apt-get -y update && \
     apt-get -y upgrade && \
@@ -20,10 +23,10 @@ RUN apt-get -y update && \
     apt-get install -y python3-pip python3-venv python3-setuptools && \
     apt-get install -y python3-yaml python3-jinja2 python3-httplib2
 
-RUN apt-get install -yq software-properties-common && \
-    apt-add-repository -y ppa:ansible/ansible && \
-    apt-get update -q && \
-    apt-get install -yq ansible=2.7*
+RUN apt-get install -yq software-properties-common
+RUN apt-add-repository -y ppa:ansible/ansible
+RUN apt-get update
+# RUN apt-get install -yq ansible==2.7.12
 
 RUN apt-get install -y tree
 RUN apt-get install -y nano
@@ -34,12 +37,16 @@ RUN apt-get install -y traceroute
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y snmp
 RUN apt-get install -y snmp-mibs-downloader
+
+
+RUN apt-get -y update
 RUN apt-get install -y pandoc
 RUN apt-get install -y texlive
 
 RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip
 
+RUN pip3 install ansible==2.7.12
 
 RUN pip3 install argparse && \
         pip3 install requests && \
