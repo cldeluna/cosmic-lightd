@@ -56,7 +56,7 @@ This is a larger version of the standard Docker Ansible container which includes
 ## Build
 
 ```
-Claudias-iMac:cosmic-lightd claudia$ tree
+Claudias-iMac:disco-immigrant claudia$ tree
 .
 ├── AboutDocker.png
 ├── About_iMac.png
@@ -67,22 +67,22 @@ Claudias-iMac:cosmic-lightd claudia$ tree
 ```
 
 ```
-Claudias-iMac:cosmic-light claudia$ docker build -t cldeluna/cosmic-light .
+Claudias-iMac:disco-immigrant claudia$ docker build -t cldeluna/disco-immigrant .
 ```
 
 ## Run
 
 Run interactively and map a local directory /Users/claudia/Documents/docker_volume to the /ansible directory in the container.
 ```
-Claudias-iMac:cosmic-light claudia$ docker run -v  /Users/claudia/Documents/docker_volume:/ansible -it cldeluna/cosmic-light
+Claudias-iMac:disco-immigrant claudia$ docker run -v  /Users/claudia/Documents/docker_volume:/ansible -it cldeluna/disco-immigrant
 ```
 
 ## Docker Hub
 
 ```
-Claudias-iMac:cosmic-lightd claudia$ docker login
-Claudias-iMac:cosmic-lightd claudia$ docker tag cldeluna/cosmic-lightd:latest cldeluna/cosmic-lightd:latest
-Claudias-iMac:cosmic-lightd claudia$ docker push cldeluna/cosmic-lightd
+Claudias-iMac:disco-immigrant claudia$ docker login
+Claudias-iMac:disco-immigrant claudia$ docker tag cldeluna/disco-immigrant:latest cldeluna/disco-immigrant:latest
+Claudias-iMac:disco-immigrant claudia$ docker push cldeluna/disco-immigrant
 ```
 
 ## Environment
